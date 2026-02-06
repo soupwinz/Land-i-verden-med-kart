@@ -1,0 +1,218 @@
+* { box-sizing: border-box; }
+
+body{
+  font-family:-apple-system,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  margin:0;
+  padding:16px;
+  background:#f6f7f9;
+  color:#111;
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:14px;
+}
+
+h1{ margin:0 0 6px; font-size:24px; }
+p{ margin:0 0 10px; color:#444; font-size:14px; }
+
+.muted{ color:#555; font-size:14px; }
+.totalCounts{ font-weight:900; font-size:15px; }
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+button{
+  border:0;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  font-size:14px;
+}
+
+button.secondary{
+  background:#e9eaee;
+  color:#111;
+}
+
+main{ display:grid; gap:14px; }
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+}
+
+.name{ margin:0; font-size:20px; }
+.counts{ color:#555; font-size:14px; }
+
+.input{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:16px;
+}
+
+.input:disabled{ background:#f3f4f6; color:#555; }
+
+.feedback{
+  margin-top:8px;
+  min-height:20px;
+  font-size:14px;
+}
+.feedback.ok{ color:#0a7a2f; }
+.feedback.bad{ color:#b00020; }
+
+.list, .missingList{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#eef2ff;
+  border:1px solid #dbe2ff;
+  font-size:14px;
+}
+
+.chip button{
+  background:transparent;
+  border:0;
+  padding:0;
+  color:#111;
+  font-weight:900;
+}
+
+/* RESULTS */
+.resultsTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.results h2{ margin:0; font-size:18px; }
+
+.missingBlock{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px dashed #ddd;
+}
+.missingBlock h3{ margin:0 0 8px; font-size:16px; }
+
+.resultsActions{ margin-top:12px; display:flex; gap:10px; }
+
+/* MAP */
+.mapCard{ padding:12px; }
+.mapTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+}
+.mapTitle{ margin:0; font-size:18px; }
+.mapCounts{ font-weight:900; }
+
+.mapFrame{
+  margin-top:10px;
+  width:100%;
+  padding:0;
+  background:transparent;
+  border-radius:12px;
+}
+
+.mapContainer{
+  width:100%;
+  height:200px;
+  border-radius:12px;
+  border:1px solid #e6e6e6;
+  overflow:hidden;
+  background:#fff;
+}
+
+@media (min-width:800px){
+  .mapContainer{ height:260px; }
+}
+
+/* <object> må fylle container */
+.mapContainer object,
+.panzoomViewport object{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* MODAL */
+.modal[hidden]{ display:none !important; }
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  flex-direction:column;
+  padding:12px;
+  z-index:9999;
+}
+
+.modalHeader{
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  position:relative;
+  z-index:5;
+}
+
+.modalTitle{ font-weight:900; }
+
+.modalBody{
+  margin-top:10px;
+  flex:1;
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #e6e6e6;
+  position:relative;
+}
+
+.panzoomViewport{
+  width:100%;
+  height:100%;
+  touch-action:none; /* viktig for pinch/pan */
+  overflow:hidden;
+  position:relative;
+}
+
+.panzoomHelp{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  background:rgba(255,255,255,0.85);
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid #e6e6e6;
+  font-size:13px;
+}
+
+input, button{ -webkit-tap-highlight-color: transparent; }
